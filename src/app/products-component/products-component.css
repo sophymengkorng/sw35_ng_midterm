@@ -1,0 +1,55 @@
+.catalog-page {
+  min-height: 680px;
+}
+.catalog-hero {
+  background: #f7efe7;
+  padding: 4.5rem 0 3.5rem;
+}
+.eyebrow {
+  color: #e7473f;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.page-title {
+  color: #24201c;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+.page-copy {
+  color: #8a8178;
+  font-size: 1.05rem;
+}
+.inventory-pill {
+  background: #fffdf8;
+  border-radius: 999px;
+  color: #a75c45;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.65rem 0.9rem;
+}
+.filter-row {
+  align-items: center;
+  border-bottom: 1px solid #eee8dc;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+.filter-label {
+  color: #24201c;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+.sort-note {
+  color: #a79889;
+  font-size: 0.8rem;
+}
+@media (max-width: 575.98px) {
+  .filter-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}

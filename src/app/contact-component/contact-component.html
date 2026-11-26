@@ -1,0 +1,69 @@
+<main class="contact-page">
+  <section class="contact-hero">
+    <div class="container">
+      <p class="eyebrow mb-2">Let's talk cards</p>
+      <h1 class="page-title mb-3">Your next favorite<br /><em>might be here.</em></h1>
+      <p class="page-copy mb-0">
+        Questions about a card, an order, or the collection? We would love to hear from you.
+      </p>
+    </div>
+  </section>
+  <section class="container contact-content py-5">
+    <div class="row g-5 align-items-start">
+      <div class="col-12 col-lg-5">
+        <p class="eyebrow mb-2">Contact Us for more information</p>
+        <h2 class="contact-title">A friendly hello is only a message away.</h2>
+        <div class="contact-details mt-4">
+          <div class="detail-item">
+            <span class="detail-icon">📥</span>
+            <div>
+              <span class="detail-label">Email</span
+              ><a href="mailto:pokemonforu@gmail.com">pokemonforu@gmail.com</a>
+            </div>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon">☎️</span>
+            <div>
+              <span class="detail-label">Phone</span><a href="tel:+85597956537">+855 97 956 537</a>
+            </div>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon">📍</span>
+            <div><span class="detail-label">Location</span><span>Russey Keo, Phnom Penh, Cambodia</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-7">
+        <form class="contact-form" (submit)="$event.preventDefault()">
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <label for="name">Your name</label
+              ><input id="name" class="form-control" placeholder="Harry Potter" />
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="email">Email address</label
+              ><input
+                id="email"
+                type="email"
+                class="form-control"
+                placeholder="harrypotter@example.com"
+              />
+            </div>
+            <div class="col-12">
+              <label for="message">Message</label
+              ><textarea
+                id="message"
+                class="form-control"
+                rows="5"
+                placeholder="Tell us what you are looking for..."
+              ></textarea>
+            </div>
+            <div class="col-12">
+              <button class="btn contact-button" type="submit">Send enquiry <span>→</span></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>

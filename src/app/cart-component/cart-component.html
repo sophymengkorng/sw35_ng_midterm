@@ -1,0 +1,71 @@
+<main class="cart-page">
+  <section class="cart-hero">
+    <div class="container">
+      <p class="eyebrow mb-2">Your shopping process here</p>
+      <h1 class="page-title mb-2">Shopping cart</h1>
+      <p class="page-copy mb-0">Please check your item carefully before proceeding to checkout.</p>
+    </div>
+  </section>
+
+  <section class="container cart-content py-5">
+    @if (cartItems.length > 0) {
+      <div class="row g-5 align-items-start">
+        <div class="col-12 col-lg-8">
+          <div class="cart-heading">
+            <span>{{ cartItems.length }} items</span><span>Price</span>
+          </div>
+          <div class="cart-list">
+            @for (item of cartItems; track item.id) {
+              <article class="cart-item">
+                <div class="cart-item-image"><img [src]="item.image" [alt]="item.title" /></div>
+                <div class="cart-item-details">
+                  <p class="item-label">Base set · collectible</p>
+                  <h2>{{ item.title }}</h2>
+                  <button class="remove-button" type="button" (click)="remove(item)">Remove</button>
+                </div>
+                <div class="quantity-control">
+                  <button type="button" (click)="decrease(item)" aria-label="Decrease quantity">
+                    −</button
+                  ><span>{{ item.quantity }}</span
+                  ><button type="button" (click)="increase(item)" aria-label="Increase quantity">
+                    +
+                  </button>
+                </div>
+                <strong class="item-price">${{ item.price * item.quantity }}</strong>
+              </article>
+            }
+          </div>
+          <a routerLink="/products" class="continue-link">← Continue shopping</a>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <aside class="summary-card">
+            <p class="summary-kicker">Order summary</p>
+            <h2>Ready for checkout?</h2>
+            <div class="summary-line">
+              <span>Subtotal</span><strong>${{ subtotal.toFixed(2) }}</strong>
+            </div>
+            <div class="summary-line">
+              <span>Shipping</span
+              ><strong>{{ shipping === 0 ? 'Free' : '$' + shipping.toFixed(2) }}</strong>
+            </div>
+            <div class="free-shipping-note">Free shipping on orders over $250</div>
+            <div class="summary-total">
+              <span>Total</span><strong>${{ total.toFixed(2) }}</strong>
+            </div>
+            <p class="summary-khr">{{ total | toKhr }}៛ estimated total</p>
+            <button class="checkout-button" type="button">Proceed to checkout</button>
+          </aside>
+        </div>
+      </div>
+    } @else {
+      <div class="empty-cart">
+        <div class="empty-icon">⛟</div>
+        <p class="eyebrow">Nothing here yet</p>
+        <h2>Your cart is empty</h2>
+        <p>Please add more items to your cart to get processing.</p>
+        <a routerLink="/products" class="checkout-button">Explore more products</a>
+      </div>
+    }
+  </section>
+</main>

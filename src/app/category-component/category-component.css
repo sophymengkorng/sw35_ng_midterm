@@ -1,0 +1,107 @@
+.category-page {
+  min-height: 680px;
+}
+.category-hero {
+  background: #24201c;
+  color: #fff;
+  padding: 5rem 0 4.5rem;
+}
+.eyebrow {
+  color: #ffd1aa;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.page-title {
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+}
+.page-copy {
+  color: #bcb3a8;
+  font-size: 1.05rem;
+}
+.category-grid {
+  padding-bottom: 6rem !important;
+}
+.category-card {
+  border-radius: 1.1rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 310px;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 1.4rem;
+  position: relative;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.category-card::after {
+  background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.28), transparent 35%);
+  content: '';
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+.category-card:hover {
+  box-shadow: 0 16px 32px rgba(70, 46, 27, 0.15);
+  color: #fff;
+  transform: translateY(-5px);
+}
+.base-set {
+  background: linear-gradient(135deg, #e7473f, #a92e35);
+}
+.holo {
+  background: linear-gradient(135deg, #d28346, #7e4e36);
+}
+.edition {
+  background: linear-gradient(135deg, #5c6677, #242d40);
+}
+.category-index,
+.category-card > div {
+  position: relative;
+  z-index: 1;
+}
+.category-index {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  opacity: 0.75;
+}
+.category-kicker {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.55rem;
+  text-transform: uppercase;
+}
+.category-card h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  margin-bottom: 1.2rem;
+}
+.category-link {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding-bottom: 0.25rem;
+}
+.category-note {
+  align-items: center;
+  color: #8a8178;
+  display: flex;
+  gap: 0.7rem;
+  justify-content: center;
+}
+.note-dot {
+  background: #e7473f;
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+}

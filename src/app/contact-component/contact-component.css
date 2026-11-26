@@ -1,0 +1,114 @@
+.contact-page {
+  min-height: 680px;
+}
+.contact-hero {
+  background: #f7efe7;
+  padding: 4.8rem 0 4.2rem;
+}
+.eyebrow {
+  color: #e7473f;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.page-title {
+  color: #24201c;
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+}
+.page-title em {
+  color: #e7473f;
+  font-style: normal;
+}
+.page-copy {
+  color: #8a8178;
+  font-size: 1.05rem;
+  max-width: 510px;
+}
+.contact-title {
+  color: #24201c;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1.05;
+  max-width: 390px;
+}
+.detail-item {
+  align-items: center;
+  display: flex;
+  gap: 0.85rem;
+  margin-bottom: 1.35rem;
+}
+.detail-icon {
+  align-items: center;
+  background: #f7efe7;
+  border-radius: 50%;
+  color: #e7473f;
+  display: inline-flex;
+  font-size: 1.15rem;
+  font-weight: 800;
+  height: 42px;
+  justify-content: center;
+  width: 42px;
+}
+.detail-item a,
+.detail-item span:last-child {
+  color: #4d463f;
+  display: block;
+  text-decoration: none;
+}
+.detail-item a:hover {
+  color: #e7473f;
+}
+.detail-label {
+  color: #a79889 !important;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+}
+.contact-form {
+  background: #fff;
+  border: 1px solid #eee8dc;
+  border-radius: 1.1rem;
+  box-shadow: 0 14px 30px rgba(70, 46, 27, 0.06);
+  padding: 1.5rem;
+}
+.contact-form label {
+  color: #6f6860;
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.contact-form .form-control {
+  background: #fbf9f5;
+  border: 1px solid #eee8dc;
+  border-radius: 0.65rem;
+  color: #24201c;
+  padding: 0.75rem 0.85rem;
+}
+.contact-form .form-control:focus {
+  border-color: #e7473f;
+  box-shadow: 0 0 0 0.2rem rgba(231, 71, 63, 0.12);
+}
+.contact-button {
+  background: #24201c;
+  border-radius: 0.65rem;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 0.3rem;
+  padding: 0.75rem 1.15rem;
+}
+.contact-button:hover {
+  background: #e7473f;
+  color: #fff;
+}
+.contact-button span {
+  color: #ffd1aa;
+  margin-left: 0.35rem;
+}

@@ -1,0 +1,24 @@
+<main id="home">
+  <app-main-slider-component></app-main-slider-component>
+  <section class="container product-section py-5" id="products">
+    <div
+      class="section-heading d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4"
+    >
+      <div>
+        <p class="eyebrow mb-2">Curated collection</p>
+        <h1 class="section-title mb-2">Find your next rare pull</h1>
+        <p class="section-copy mb-0">Original base set favorites, ready for your collection.</p>
+      </div>
+      <span class="inventory-pill">{{ product_list.length }} cards in stock</span>
+    </div>
+    <div class="row g-4">
+      @for (item of product_list; track item.id) {
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <app-product-card-component [product]="item"></app-product-card-component>
+        </div>
+      } @empty {
+        <p class="text-center">No products found.</p>
+      }
+    </div>
+  </section>
+</main>

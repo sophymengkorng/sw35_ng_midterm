@@ -1,0 +1,27 @@
+<main class="catalog-page">
+  <section class="catalog-hero">
+    <div class="container">
+      <p class="eyebrow mb-2">The full shelf</p>
+      <div class="d-flex flex-wrap justify-content-between align-items-end gap-3">
+        <div>
+          <h1 class="page-title mb-2">Shop the collection</h1>
+          <p class="page-copy mb-0">Classic base set cards, carefully selected for collectors.</p>
+        </div>
+        <span class="inventory-pill">{{ productList.length }} featured cards</span>
+      </div>
+    </div>
+  </section>
+  <section class="container catalog-grid py-5">
+    <div class="filter-row mb-4">
+      <span class="filter-label">Showing all cards</span>
+      <span class="sort-note">Base set · Holo rare · First edition</span>
+    </div>
+    <div class="row g-4">
+      @for (product of productList; track product.id) {
+        <div class="col-12 col-sm-6 col-lg-3">
+          <app-product-card-component [product]="product"></app-product-card-component>
+        </div>
+      }
+    </div>
+  </section>
+</main>

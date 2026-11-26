@@ -1,95 +1,98 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
-  <div class="container">
-    <a class="navbar-brand fw-semibold" href="#">Pokemon Store</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+git <nav class="navbar navbar-expand-lg store-navbar sticky-top">
+  <div class="container py-2">
+    <a class="navbar-brand store-brand" href="#"
+      ><span>Pokemon<span class="brand-accent">Store</span></span></a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse navbar-content" id="navbarSupportedContent">
       <ul class="navbar-nav nav-center mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
         </li>
+        <li class="nav-item"><a class="nav-link" routerLink="/products">Products</a></li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Products</a>
+          <a class="nav-link" routerLink="category" role="button" aria-expanded="false"
+            >Categories</a
+          >
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Categories
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Base Set</a></li>
-            <li><a class="dropdown-item" href="#">Holo Rare</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">First Edition</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li>
       </ul>
-      <form class="d-flex search-form" role="search">
-        <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success search-button" type="submit" aria-label="Search">
-          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M21 21l-4.35-4.35"></path>
-            <circle cx="11" cy="11" r="7"></circle>
+      <div class="navbar-actions">
+        <form class="d-flex search-form" role="search" (submit)="$event.preventDefault()">
+          <input
+            class="form-control search-input"
+            type="search"
+            placeholder="Search cards"
+            aria-label="Search cards"
+          /><button class="btn search-button" type="submit" aria-label="Search">
+            <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 21l-4.35-4.35"></path>
+              <circle cx="11" cy="11" r="7"></circle>
+            </svg>
+          </button>
+        </form>
+        <button
+          class="btn cart-button"
+          type="button"
+          routerLink="/cart"
+          aria-label="Open shopping cart"
+        >
+          <svg class="cart-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L20 8H6"></path>
+            <circle cx="10" cy="19" r="1.2"></circle>
+            <circle cx="17" cy="19" r="1.2"></circle>
           </svg>
+          @if (cartCount > 0) {
+            <span class="cart-count">{{ cartCount }}</span>
+          }
         </button>
-      </form>
+      </div>
     </div>
   </div>
 </nav>
+<router-outlet></router-outlet>
 
-<app-main-slider-component></app-main-slider-component>
-
-<div class="container mt-2">
-  <p class="text-secondary">Products: {{ product_list.length }}</p>
-
-  <div class="row">
-    @for (item of product_list; track item.id) {
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-        <app-product-card-component [product]="item"></app-product-card-component>
-      </div>
-    } @empty {
-      <p class="text-center">No products found.</p>
-    }
-  </div>
-</div>
-
-<footer class="bg-white text-dark pt-4 pb-3 mt-5 border-top">
+<footer class="store-footer pt-5 pb-3" id="contact">
   <div class="container">
     <div class="row">
       <div class="col-md-4 mb-3">
-        <h5>My Website</h5>
-        <p class="text-secondary">
-          Welcome to my website. This is a one-stop shop for all things related to Pokemon!
+        <div class="store-brand footer-brand mb-3">
+          <span class="brand-mark"></span
+          ><span>Pokemon<span class="brand-accent">Store</span></span>
+        </div>
+        <p class="footer-copy">
+          Enjoy your favorite Pokemon cards with us. Make your collection complete with Us.
         </p>
       </div>
-
       <div class="col-md-4 mb-3">
         <h5>Quick Links</h5>
         <ul class="list-unstyled">
-          <li><a href="#" class="text-dark text-decoration-none">Home</a></li>
-          <li><a href="#" class="text-dark text-decoration-none">About</a></li>
-          <li><a href="#" class="text-dark text-decoration-none">Projects</a></li>
-          <li><a href="#" class="text-dark text-decoration-none">Contact</a></li>
+          <li><a routerLink="home" class="text-decoration-none">Home</a></li>
+          <li><a routerLink="products" class="text-decoration-none">Products</a></li>
+          <li><a routerLink="category" class="text-decoration-none">Categories</a></li>
+          <li><a routerLink="contact" class="text-decoration-none">Contact</a></li>
         </ul>
       </div>
-
       <div class="col-md-4 mb-3">
         <h5>Contact</h5>
-        <p class="mb-1">Email: pokemonforu@gmail.com</p>
-        <p class="mb-1">Phone: +855 97956537</p>
+        <p class="mb-1">pokemonforu@gmail.com</p>
+        <p class="mb-1">+855 97 956 537</p>
         <p>Phnom Penh, Cambodia</p>
       </div>
     </div>
-
-    <hr>
-
+    <hr />
     <div class="text-center">
-      <p class="mb-0">&copy; 2026 My Website. All Rights Reserved.</p>
+      <p class="mb-0">&copy; 2026 Pokemon Store. Built for collectors.</p>
     </div>
   </div>
 </footer>
-
-
