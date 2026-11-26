@@ -17,15 +17,42 @@
     <div class="collapse navbar-collapse navbar-content" id="navbarSupportedContent">
       <ul class="navbar-nav nav-center mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+          <a
+            class="nav-link"
+            aria-current="page"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
         </li>
-        <li class="nav-item"><a class="nav-link" routerLink="/products">Products</a></li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="category" role="button" aria-expanded="false"
+          <a
+            class="nav-link"
+            routerLink="/products"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Products</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="category"  
+          routerLinkActive="active" 
+          [routerLinkActiveOptions]="{ exact: true }" 
+          role="button" aria-expanded="false" 
             >Categories</a
           >
         </li>
-        <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/contact"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Contact</a
+          >
+        </li>
       </ul>
       <div class="navbar-actions">
         <form class="d-flex search-form" role="search" (submit)="$event.preventDefault()">
