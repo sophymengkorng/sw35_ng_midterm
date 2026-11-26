@@ -17,13 +17,9 @@ interface Product {
   templateUrl: './product-card-component.html',
 })
 export class ProductCardComponent {
-  @Input() product:any= [];
-  public stringToUpper(name: string): string {
-    return name.toUpperCase();
-  }
+  @Input() product: any = [];
 }
 
 export class AppComponent {
   Math = Math;
 }
-

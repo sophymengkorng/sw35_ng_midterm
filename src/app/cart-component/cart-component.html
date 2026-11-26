@@ -21,7 +21,9 @@
                 <div class="cart-item-details">
                   <p class="item-label">Base set · collectible</p>
                   <h2>{{ item.title }}</h2>
-                  <button class="remove-button" type="button" (click)="remove(item)">Remove</button>
+                  <button class="remove-button" type="button" (click)="openRemoveDialog(item)">
+                    Remove
+                  </button>
                 </div>
                 <div class="quantity-control">
                   <button type="button" (click)="decrease(item)" aria-label="Decrease quantity">
@@ -69,3 +71,38 @@
     }
   </section>
 </main>
+
+@if (showRemoveDialog && itemToRemove) {
+  <div class="remove-backdrop" role="presentation" (click)="closeRemoveDialog()">
+    <section
+      class="remove-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="remove-title"
+      (click)="$event.stopPropagation()"
+    >
+      <button
+        class="dialog-close"
+        type="button"
+        aria-label="Close remove dialog"
+        (click)="closeRemoveDialog()"
+      >
+        ×
+      </button>
+      <p class="eyebrow mb-2">Remove item</p>
+      <h2 id="remove-title">Remove this card from your cart?</h2>
+      <div class="remove-product">
+        <img [src]="itemToRemove.image" [alt]="itemToRemove.title" /><strong>{{
+          itemToRemove.title
+        }}</strong>
+      </div>
+      <div class="dialog-actions">
+        <button class="btn cancel-remove" type="button" (click)="closeRemoveDialog()">
+          Keep card</button
+        ><button class="btn confirm-remove" type="button" (click)="confirmRemove()">
+          Yes, remove <span>×</span>
+        </button>
+      </div>
+    </section>
+  </div>
+}

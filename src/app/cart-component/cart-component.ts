@@ -10,6 +10,9 @@ import { CartItem, CartService } from '../services/cart.service';
   templateUrl: './cart-component.html',
 })
 export class CartComponent {
+  itemToRemove: CartItem | null = null;
+  showRemoveDialog = false;
+
   constructor(private readonly cartService: CartService) {}
 
   get cartItems(): CartItem[] {
@@ -36,7 +39,18 @@ export class CartComponent {
     this.cartService.increase(item);
   }
 
-  remove(item: CartItem): void {
-    this.cartService.remove(item);
+  openRemoveDialog(item: CartItem): void {
+    this.itemToRemove = item;
+    this.showRemoveDialog = true;
+  }
+
+  closeRemoveDialog(): void {
+    this.itemToRemove = null;
+    this.showRemoveDialog = false;
+  }
+
+  confirmRemove(): void {
+    if (this.itemToRemove) this.cartService.remove(this.itemToRemove);
+    this.closeRemoveDialog();
   }
 }
